@@ -2,18 +2,8 @@ import sqlite3
 from sqlite3 import Error
 import csv
 
-def database_connect(db_name):
-    conn=None;
-    try:
-        conn=sqlite3.Connection(db_name)
-        return conn
-    except Error as e:
-        print(e)
 
-
-
-def create_table():
-    db_name='normanpd.db'
+def createdb(db_name):
     conn=None;
     try:
         conn=sqlite3.Connection(db_name)
@@ -35,7 +25,7 @@ def create_table():
         print(e)
     conn.close()
 
-def insert_data(db_name)#, incidents):
+def insert_data(db_name):
     conn=None;
     try:
         conn=sqlite3.Connection(db_name)
@@ -58,6 +48,5 @@ def insert_data(db_name)#, incidents):
 
 if __name__=='__main__':
     db_name="normanpd.db"
-    conn=database_connect(db_name)
-    create_table(conn)
+    createdb(db_name)
     insert_data(conn)
