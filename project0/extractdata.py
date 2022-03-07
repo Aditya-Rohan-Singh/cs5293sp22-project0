@@ -4,8 +4,6 @@ import csv
 import re
 
 def extract_data(data):
-    #Retriving data from url
-    #data=fetch_data(url)
 
     #Opening csv file to write data
     csv_file=open('extracted_data.csv','w')
@@ -62,6 +60,6 @@ def extract_data(data):
 
 
 if __name__=='__main__':
+    #Testing purpose function calls
     url = ("https://www.normanok.gov/sites/default/files/documents/2022-02/2022-02-03_daily_incident_summary.pdf")
     data=extract_data(url)
-    print(data)
