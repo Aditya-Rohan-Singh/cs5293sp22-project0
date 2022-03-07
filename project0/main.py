@@ -1,16 +1,17 @@
 
 
 import argparse
-#import project0
-import extractdata
-from extractdata import extract_data
-import fetchdata
-from fetchdata import fetch_data
+import project0
+from project0 import extract_data, fetch_data, createdb, insert_data, status
+#import extractdata
+#from extractdata import extract_data
+#import fetchdata
+#from fetchdata import fetch_data
 import re
-import create_table
-from create_table import createdb, insert_data
-import display_table
-from display_table import status
+#import create_table
+#from create_table import createdb, insert_data
+#import display_table
+#from display_table import status
 
 def main(url):
     
