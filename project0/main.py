@@ -15,7 +15,7 @@ def main(url):
 
     #Create table and insert data
     url_date=re.search('https://www.normanok.gov/sites/default/files/documents/2022-02/(.+?)_daily_incident_summary.pdf',url).group(1)
-    db_name = 'normanpd' + url_date + '.db'
+    db_name = 'normanpd.db'
     createdb(db_name)
     insert_data(db_name)
 
