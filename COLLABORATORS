@@ -1,0 +1,10 @@
+Sai Sharath Kumar, Sabbarapu | s.sharath.kumar@ou.edu | Discussed usage of regular expressions to tackle missing values for Address and Nature column, helped in understanding importing project0 functions for tests
+Rajasekaran, Pradipkumar | Pradipkumar.Rajasekaran-1@ou.edu | Discussed usage of regex expressions to tackle double lines in address column
+Brown, Sarah | srb@ou.edu | Suggested solution to resolve importing project0 in test
+
+Stackoverflow | https://stackoverflow.com/questions/2887878/importing-a-csv-file-into-a-sqlite3-database-table-using-python | Helped to understand how to import csv file into a sqlite3 databasei
+PythonTutorial | https://www.pythontutorial.net/python-basics/python-write-csv-file/ | Looked up how to write into csv file to confirm if code is correct
+Python.org | https://docs.python.org/3/library/re.html | To understand usage of regular expressions
+Programiz | https://www.programiz.com/python-programming/regex | To understand usage of regular expressions
+SqlLiteTutorial | https://www.sqlitetutorial.net/sqlite-python/create-tables/ | To understand how to connect to sqlite3 dataabse from python
+Finxter | https://blog.finxter.com/python-how-to-import-modules-from-another-folder/#:~:text=The%20most%20Pythonic%20way%20to,import%20module%20 | To understand how to import python files in differnt python files

@@ -46,4 +46,4 @@ def test_insert_table():
 def test_status():
     db_name='normanpd.db'
     data_retreived=project0.status(db_name)
-    assert len(data_retreived) > 1
+    assert len(data_retreived) == 64
