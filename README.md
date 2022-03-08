@@ -1,7 +1,38 @@
 # cs5293sp22-project0
 Text Analytics - Project 0 
 
-Execute Command: pipenv run python project0/main.py --incidents <url>
+Author: Aditya Rohan Singh
+
+Email: aditya.rohan.singh-1@ou.edu
+
+Libraries used: urllib, tempfile, PyPDF2, csv, re, sqlite3, osi, pytest
+
+Install commands:
+pipenv install pytest
+pipenv install PyPDF2
+
+Execute Command for project0: pipenv run python project0/main.py --incidents <url>
+Example:
+pipenv run python project0/main.py --incidents https://www.normanok.gov/sites/default/files/documents/2022-02/2022-02-21_daily_incident_summary.pdf
+pipenv run python project0/main.py --incidents https://www.normanok.gov/sites/default/files/documents/2022-02/2022-02-01_daily_incident_summary.pdf
+
+Execute Command to run pytest:
+pipenv run python -m pytest
+
+Assumptions:
+-----------------
+1) If the Address column is empty, then the Nature column will be empty as well
+
+2) Heading is only available on the first page of the PDF. It is being changed to match the column names of the table.
+
+3) Address with two lines will have a space before the nextline.
+
+4) The funtion create_db() checks if there is an exisiting database with the name normanpd.db, if yes then it deletes it and creates a new database to avoid adding data into an existing table. 
+
+Bugs
+----
+I haven't observed any bugs as such for multiple url's I executed it for.
+
 
 Main.py
 =======
@@ -11,7 +42,7 @@ https://oudatalab.com/cs5293sp22/projects/project0
 
 => project0 package is imported.
 
-=>User provides url of the pdf file for the particular incident report to be analyzed
+=> User provides url of the pdf file for the particular incident report to be analyzed
 
 => Fetch_data(url) executes and returns pdf
 
@@ -74,7 +105,7 @@ Project0 Funtions
 
 **4. insert_data(db_name)**
 
-=> Opens the csv file where all the extracted data from the pdf is stored
+=> Opens the csv file where all the extracted data from the pdf is stored using csv function DictReader which consiers the first row of the file as table headers and ignores the header while inserting data into the table.
 
 => Connects to database <db_name>
 
