@@ -27,11 +27,12 @@ https://oudatalab.com/cs5293sp22/projects/project0
 
 Project0 Funtions
 =================
-1. fetch_data(url)
+##1. fetch_data(url)
+
 => The url provided by the user is user in command line argument to retrive incident data in pdf format. It returns data in pdf format
 
 
-2. extract_data(data)
+##2. extract_data(data)
 
 => The data retrieved from fetch_data(url) is passed as argument.
 
@@ -62,7 +63,7 @@ Project0 Funtions
 => Loop contines till all data is sorted into array of size 5.
 
 
-3. create_db(db_name)
+##3. create_db(db_name)
 
 => Checks in the current folder if a database while the value specified in argument exists or not. If yes, it removes it.
 
@@ -70,7 +71,8 @@ Project0 Funtions
 
 => Create the incident table into the newly created database
 
-4. insert_data(db_name)
+
+##4. insert_data(db_name)
 
 => Opens the csv file where all the extracted data from the pdf is stored
 
@@ -78,7 +80,8 @@ Project0 Funtions
 
 => Inserts the data into the table incidents in database <db_name> via insert statement 
 
-5. status(db_name) 
+
+##5. status(db_name) 
 
 => Connects to database <db_name>
 
