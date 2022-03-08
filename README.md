@@ -35,7 +35,6 @@ Project0 Funtions
 
 => The data retrieved from fetch_data(url) is passed as argument.
 
-
 => A Csv file is opened to write down the extracted data into csv format for further use.
 
 => Loops through each page of the pdf one by one.
