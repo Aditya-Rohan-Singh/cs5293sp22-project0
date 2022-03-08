@@ -88,3 +88,47 @@ Project0 Funtions
 => Executes select statment to find out the type of nature of the incident and the number of time it occured.
 
 => Returns the result to the main function for display
+
+
+TEST CASES
+==========
+
+Set Test url to be used as:
+
+url='https://www.normanok.gov/sites/default/files/documents/2022-02/2022-02-21_daily_incident_summary.pdf'                    
+
+**1.test_fetch_data(test_url)**
+
+=> Fetch_data(url) returns pdf data. The length of the pdf data should be 374028 as checked manually.
+
+
+**2.test_extract_data(test_url)**
+
+=> Used fetch_data(url) to retrive data. 
+
+=> It is passed as the argument for extract_data(data). The function should create a csv file called Extraced_data.csv where all the data is extracted and segregated.
+
+=> It checks in the current directory if the csv file exists or not and if the size of the file is equal to 318 (header row + 317 rows of data)
+
+=> If the condition satsifies then it pasts the test
+
+
+**3.test_create_table()**
+
+=> Execute function create_table(db_name) to create database normanpd.db and table incidents
+
+=> It checks if in the current directory the normanpd.db file exists or not. Test passes if the database is found.
+
+**4.test_insert_table()**
+
+=> Executes function insert_table(db_name) to insert data from the csv file created before into table incidents
+
+=> Execute select statment to find count of total rows inside the table to check if insertion worked or not.
+
+=> If the number of rows is equal to 317 then the test passes and all rows are inserted.
+
+**5.test_status(db_name)**
+
+=> Executes function status(db_name) to execute select statment to find different nature of incidents and the no of times it occurred. 
+
+=> It compares with the length of the result set returned which should be 64 as there are 64 unique nature values.
