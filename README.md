@@ -38,27 +38,28 @@ Project0 Funtions
 => A Csv file is opened to write down the extracted data into csv format for further use.
 
 => Loops through each page of the pdf one by one.
-	=> It converts the pdf data as recieved in argument into readable text format using the PyPDF2 library.
 
-	=> In some cases, address have 2 lines. Using regular expressions the address is merged into a singular line for simplicity.
+=> It converts the pdf data as recieved in argument into readable text format using the PyPDF2 library.
 
-	=> Initial page of the pdf contains column headers, they are converted into the column names that will be used for table in sqlite3 database for easier insertion operation
+=> In some cases, address have 2 lines. Using regular expressions the address is merged into a singular line for simplicity.
 
-	=> All data is split on the newline('\n') to seperate all the data.
+=> Initial page of the pdf contains column headers, they are converted into the column names that will be used for table in sqlite3 database for easier insertion operation
 
-	=> Initialized a counter and row to store each row data
+=> All data is split on the newline('\n') to seperate all the data.
 
-	=> Loop through each value in the current page
+=> Initialized a counter and row to store each row data
 
-		=> With the help of a counter which increments from 0 to 4, created each row of data of 5 values.
+=> Loop through each value in the current page
 
-		=> In case Addressm and Nature is missing, used regex to check if the 3rd column value is same as what is suppossed to be in the 5th column and added data values "No data" for the specific case as while the library complete ignores empty fields in the pdf.
+=> With the help of a counter which increments from 0 to 4, created each row of data of 5 values.
 
-		=> Each row is then writtern into the open csv file and a list that contains all the rows of data.
+=> In case Addressm and Nature is missing, used regex to check if the 3rd column value is same as what is suppossed to be in the 5th column and added data values "No data" for the specific case as while the library complete ignores empty fields in the pdf.
 
-		=> Counter and row value is re-initialized to 0 and null respectively for the next 5 sets of data.
+=> Each row is then writtern into the open csv file and a list that contains all the rows of data.
 
-		=> Loop contines till all data is sorted into array of size 5.
+=> Counter and row value is re-initialized to 0 and null respectively for the next 5 sets of data.
+
+=> Loop contines till all data is sorted into array of size 5.
 
 
 3. create_db(db_name)
