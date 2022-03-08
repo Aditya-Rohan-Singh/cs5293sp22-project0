@@ -26,9 +26,9 @@ def main(url):
 
 if __name__ == '__main__':
         parser = argparse.ArgumentParser()
-        parser.add_argument("--incident_url", type=str, required=True,help="Incident summary url.")
+        parser.add_argument("--incidents", type=str, required=True,help="Incident summary url.")
         args = parser.parse_args()
-        if args.incident_url:
-            main(args.incident_url)
+        if args.incidents:
+            main(args.incidents)
 
         
