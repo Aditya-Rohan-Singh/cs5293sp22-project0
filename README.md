@@ -38,7 +38,6 @@ Project0 Funtions
 => A Csv file is opened to write down the extracted data into csv format for further use.
 
 => Loops through each page of the pdf one by one.
-
 	=> It converts the pdf data as recieved in argument into readable text format using the PyPDF2 library.
 
 	=> In some cases, address have 2 lines. Using regular expressions the address is merged into a singular line for simplicity.
