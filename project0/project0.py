@@ -5,7 +5,7 @@ import csv
 import re
 import sqlite3
 from sqlite3 import Error
-
+import os.path
 
 def fetch_data(url):
 
@@ -51,7 +51,7 @@ def extract_data(data):
                 row.append(st)
             else:
                 if(i==2):
-                    if(re.match('OK\d{7}',page1[j]) or re.match('EMSSTAT',page1[j]) or re.match('1400\d',page1[j])):
+                    if(re.match('OK\\d{7}',page1[j]) or re.match('EMSSTAT',page1[j]) or re.match('1400\\d',page1[j])):
                         row.append("No Data")                                           #Address column is empty
                         row.append("No Data")                                           #Nature Column is empty
                         row.append(page1[j])
@@ -72,13 +72,17 @@ def extract_data(data):
 
 
 def createdb(db_name):
+    current_folder=os.getcwd()
+    path=current_folder+'/normanpd.db'
+    if os.path.exists(path):
+        os.remove(path)
     conn=None;
     try:
         conn=sqlite3.Connection(db_name)
     except Error as e:
         print(e)
 
-    table_sql="""create table incidents (
+    table_sql="""create table incidents(
     incident_time TEXT,
     incident_number TEXT,
     incident_location TEXT,
